@@ -64,7 +64,7 @@ Trước khi bắt đầu, hãy đảm bảo bạn đã cài đặt các yêu c�
 Để sao chép kho lưu trữ, mở terminal và chạy lệnh sau:
 
 ```bash
-git clone https://github.com/ZenithGn/usermanagerts2_jsp.git
+git clone https://github.com/ZenithGn/UserManagementT2S2_JSP.git
 ```
 
 <div align="center">
