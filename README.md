@@ -25,7 +25,7 @@ Trước khi bắt đầu, hãy đảm bảo bạn đã cài đặt các yêu c�
 - [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) (phiên bản 7)
 - [NetBeans IDE](https://netbeans.apache.org/download/index.html)
 - [Apache Tomcat](https://tomcat.apache.org/download-90.cgi) (phiên bản 8)
-- [MicrosoftSQL Server](https://dev.mysql.com/downloads/mysql/)
+- [MicrosoftSQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (phiên bản 2014)
 
 <div align="center">
 
