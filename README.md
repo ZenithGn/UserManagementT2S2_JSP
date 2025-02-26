@@ -8,21 +8,6 @@ Code chỉ mang tính chất tham khảo nên có bug hãy report code sẽ đư
 
 <div align="center">
 
-## 📋 Table of Contents
-
-</div >
-
-- [Introduction](#introduction)
-- [Technologies Used](#technologies-used)
-- [Prerequisites](#prerequisites)
-- [Cloning the Repository](#cloning-the-repository)
-- [Setting Up in NetBeans](#setting-up-in-netbeans)
-- [Running the Application](#running-the-application)
-- [Contributing](#contributing)
-- [License](#license)
-
-<div align="center">
-
 ## 📖 Introduction
 
 </div>
@@ -31,20 +16,7 @@ The User Management System is a web application that allows administrators to ma
 
 <div align="center">
 
-## 🛠️ Technologies Used
-
-</div>
-
-- Java
-- JavaServer Pages (JSP)
-- Servlet
-- NetBeans IDE
-- Apache Tomcat 
-- MicrosoftSQL Server 
-
-<div align="center">
-
-## ✅ Prerequisites
+## ✅ Required
 
 </div>
 
@@ -61,7 +33,7 @@ Trước khi bắt đầu, hãy đảm bảo bạn đã cài đặt các yêu c�
 
 </div>
 
-Để sao chép kho lưu trữ, mở terminal và chạy lệnh sau:
+Để sao chép kho lưu trữ, mở terminal và chạy lệnh sau (Nhớ install Git về trước khi clone repository):
 
 ```bash
 git clone https://github.com/ZenithGn/UserManagementT2S2_JSP.git
