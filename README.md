@@ -33,7 +33,7 @@ Trước khi bắt đầu, hãy đảm bảo bạn đã cài đặt các yêu c�
 
 </div>
 
-Để sao chép kho lưu trữ, mở terminal và chạy lệnh sau (Nhớ install Git về trước khi clone repository):
+Để sao chép kho lưu trữ, mở terminal và chạy lệnh sau (Install [Git](https://git-scm.com/downloads) về trước khi clone repository):
 
 ```bash
 git clone https://github.com/ZenithGn/UserManagementT2S2_JSP.git
