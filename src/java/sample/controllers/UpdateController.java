@@ -45,7 +45,6 @@ public class UpdateController extends HttpServlet {
                 String userID = request.getParameter("userID");
                 String fullName = request.getParameter("fullName");
                 String roleID = request.getParameter("roleID");
-                String search = request.getParameter("search");
 
                 UserDTO user = new UserDTO(userID, fullName, roleID, "");
                 UserDAO dao = new UserDAO();

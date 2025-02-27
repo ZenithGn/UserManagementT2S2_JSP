@@ -6,56 +6,62 @@
 package sample.controllers;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import sample.user.UserDAO;
+import sample.user.UserDTO;
 
 /**
  *
+ * @author lehan
  */
-public class MainController extends HttpServlet {
+public class CreateController extends HttpServlet {
 
-    private static final String WELCOME = "login.html";
-    private static final String LOGIN = "Login";
-    private static final String LOGIN_CONTROLLER = "LoginController";
-    private static final String SEARCH = "Search";
-    private static final String SEARCH_CONTROLLER = "SearchController";
-    private static final String DELETE = "Delete";
-    private static final String DELETE_CONTROLLER = "DeleteController";
-    private static final String LOGOUT = "Logout";
-    private static final String LOGOUT_CONTROLLER = "LogoutController";
-    private static final String UPDATE = "Update";
-    private static final String UPDATE_CONTROLLER = "UpdateController";
-    private static final String CREATE = "Create";
-    private static final String CREATE_CONTROLLER = "CreateController";
+    private static final String ERROR = "createuser.jsp";
+    private static final String SUCCESS = "login.html";
+    private static final String PASSWORD_ERROR = "The password confirm is incorrect please try again!";
+    private static final String DUPLICATE_ERROR = "The userID is already exist!";
+    private static final String UNKNOWN_ERROR = "There an error occur in create please try again!";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String url = WELCOME;
+
+        String url = ERROR;
         try {
-            String action = request.getParameter("action");
-            if (action == null) {
-                url = WELCOME;
-            } else if (LOGIN.equals(action)) {
-                url = LOGIN_CONTROLLER;
-            } else if (SEARCH.equals(action)) {
-                url = SEARCH_CONTROLLER;
-            } else if (DELETE.equals(action)) {
-                url = DELETE_CONTROLLER;
-            } else if (LOGOUT.equals(action)) {
-                url = LOGOUT_CONTROLLER;
-            } else if (UPDATE.equals(action)) {
-                url = UPDATE_CONTROLLER;
-            } else if (CREATE.equals(action)) {
-                url = CREATE_CONTROLLER;
+            String userID = request.getParameter("userID");
+            String fullName = request.getParameter("fullName");
+            String roleID = request.getParameter("roleID");
+            String password = request.getParameter("password");
+            String confirmPassword = request.getParameter("confirmPassword");
+
+            UserDTO user = new UserDTO(userID, fullName, roleID, password);
+            UserDAO dao = new UserDAO();
+            boolean checkDuplicate = dao.checkDuplicate(user);
+
+            if (!password.equals(confirmPassword)) {
+                request.setAttribute("ERROR", PASSWORD_ERROR);
             }
+            if (checkDuplicate) {
+                request.setAttribute("DUPLICATE", DUPLICATE_ERROR);
+            } else {
+                boolean checkCreate = dao.create(user);
+                if(checkCreate){
+                    url = SUCCESS;
+                }else {
+                    request.setAttribute("UNKNOWN", UNKNOWN_ERROR);
+                }
+            }
+
         } catch (Exception e) {
-            log("Error at MainController: " + e.toString());
+            log("Error at LoginController: " + e.toString());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

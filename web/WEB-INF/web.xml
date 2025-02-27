@@ -24,6 +24,10 @@
         <servlet-name>UpdateController</servlet-name>
         <servlet-class>sample.controllers.UpdateController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateController</servlet-name>
+        <servlet-class>sample.controllers.CreateController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MainController</servlet-name>
         <url-pattern>/MainController</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>UpdateController</servlet-name>
         <url-pattern>/UpdateController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateController</servlet-name>
+        <url-pattern>/CreateController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
